@@ -99,24 +99,23 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl:64 \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
-    gralloc.sdm660
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.1-service \
-    hwcomposer.sdm660
-
-PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0_32 \
-    android.frameworks.displayservice@1.0.vendor \
     android.frameworks.displayservice@1.0 \
+    android.frameworks.displayservice@1.0.vendor \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    vendor.qti.hardware.memtrack-service \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    gralloc.sdm660 \
+    hwcomposer.sdm660 \
     libdisplayconfig \
     libdrmutils \
-    libqdMetaData \
+    libgralloc.qti \
+    vendor.display.config@1.0 \
+    vendor.display.config@1.0.vendor \
     vendor.display.config@2.0 \
-    vendor.qti.hardware.memtrack-service
+    vendor.display.config@2.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -389,9 +388,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
-    frameworks/native/data/etc/android.software.opengles.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # QMI
 PRODUCT_PACKAGES += \

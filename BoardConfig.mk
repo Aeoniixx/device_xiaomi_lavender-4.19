@@ -51,6 +51,8 @@ $(call project-set-path,qcom-camera,$(DEVICE_PATH)/camera)
 
 # Display
 TARGET_SCREEN_DENSITY := 420
+TARGET_USES_QTI_MAPPER_2_0 := true
+TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_GRALLOC1 := true
 TARGET_USES_GRALLOC4 := true
