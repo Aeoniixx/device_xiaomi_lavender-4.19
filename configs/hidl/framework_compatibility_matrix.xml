@@ -32,6 +32,29 @@
     </interface>
 </hal>
 <hal format="aidl" optional="true">
+    <name>android.hardware.graphics.allocator</name>
+    <interface>
+         <name>IAllocator</name>
+         <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>android.hardware.graphics.allocator</name>
+    <version>4.0</version>
+    <interface>
+         <name>IAllocator</name>
+         <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>android.hardware.graphics.mapper</name>
+    <version>4.0</version>
+    <interface>
+        <name>IMapper</name>
+        <instance>default</instance>
+    <interface>
+</hal>
+<hal format="aidl" optional="true">
     <name>android.hardware.health</name>
     <version>3</version>
     <interface>
@@ -112,6 +135,30 @@
     </interface>
 </hal>
 <hal format="hidl" optional="true">
+    <name>vendor.display.color</name>
+    <version>1.0-5</version>
+    <interface>
+         <name>IDisplayColor</name>
+         <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.display.config</name>
+    <version>2.0</version>
+    <interface>
+         <name>IDisplayConfig</name>
+    <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.display.postproc</name>
+    <version>1.0</version>
+    <interface>
+         <name>IDisplayPostproc</name>
+         <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
     <name>vendor.goodix.hardware.interfaces.biometrics.fingerprint</name>
     <version>2.0-1</version>
     <interface>
@@ -128,6 +175,24 @@
     <interface>
         <name>ILocHidlGnss</name>
         <instance>gnss_vendor</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.qti.hardware.display.allocator</name>
+    <version>3.0</version>
+    <version>4.0</version>
+    <interface>
+        <name>IQtiAllocator</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>vendor.qti.hardware.display.mapper</name>
+    <version>3.0</version>
+    <version>4.0</version>
+    <interface>
+        <name>IQtiMapper</name>
+        <instance>default</instance>
     </interface>
 </hal>
 </compatibility-matrix>
