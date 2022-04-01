@@ -42,6 +42,7 @@ persist.vendor.audio.hifi.int_codec=true
 ro.af.client_heap_size_kbyte=7168
 vendor.audio.volume.headset.gain.depcal=true
 vendor.audio.spkr_prot.tx.sampling_rate=48000
+vendor.audio_hal.period_multiplier=2 
 
 vendor.audio.feature.afe_proxy.enable=true
 vendor.audio.feature.anc_headset.enable=true
