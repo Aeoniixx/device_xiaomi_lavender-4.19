@@ -1624,16 +1624,11 @@ vendor/bin/time_daemon|d647fa02dfb28b6cb981c4e77daee75a67406351
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|c8e0bbc9c6b7b5beddba43bc4125a9eaeba7c79f
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/etc/thermal-engine-camera.conf
-vendor/etc/thermal-engine-map.conf
-vendor/etc/thermal-engine-normal.conf
-vendor/etc/thermal-engine.conf
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalfeature.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
+vendor/bin/thermal-engine|bfa8ea6463ca21b36f1830a9bdb96b7b40768c6d
+vendor/etc/init/init_thermal-engine.rc|a0310f09da9f09c67e110607b73aec9f9f981c4c
+vendor/lib/libthermalclient.so|c95984e29617243ae7ce7f7da01663e6b0c87e94
+vendor/lib64/libthermalclient.so|4be5c7fd77a30758716a2ab65aae70fa60639177
 
 # TUI - from jasmine
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|a0d692fe10ef9dc4479497fa666640612f06fbb4
