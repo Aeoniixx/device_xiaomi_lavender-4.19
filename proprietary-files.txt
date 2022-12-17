@@ -1234,6 +1234,10 @@ vendor/lib64/libllvm-glnext.so|115c5a7d2463eacff39b0d0a04678bbb91c36d23
 vendor/lib64/libllvm-qcom.so|c4a55bdd7291c722dc5bf84064e2914e5256af7a
 vendor/lib64/librs_adreno.so|bf87696c917d75da5557c194098faaae5e303a0b
 
+# Graphics (Dependency) - from LA.UM.10.2.1.r1-03400-sdm660.0
+vendor/lib/libtinyxml.so|16853d57ef82d59b48506857fc80b149ba3b3543
+vendor/lib64/libtinyxml.so|da9f11e9edc92bb6d5e8f64f4fbbaf8019b8587a
+
 # Graphics (HDR) - from LA.UM.8.2.1.r1-05600-sdm660
 vendor/lib/libhdr_tm.so|a2292af314f9fa86b9ec2bb11ad72bf85e959842
 vendor/lib64/libhdr_tm.so|a1b9bbad12217e6b79951774801aa54be6460fd6

@@ -125,7 +125,6 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libdrmutils \
     libqdMetaData \
-    libtinyxml \
     vendor.display.config@2.0 \
     vendor.qti.hardware.memtrack-service
 
