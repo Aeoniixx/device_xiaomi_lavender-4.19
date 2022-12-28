@@ -33,6 +33,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <time.h>
 #include "log_util.h"
 #include "loc_log.h"
 #include "msg_q.h"
