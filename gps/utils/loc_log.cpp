@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2012, 2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2012, 2015, 2020, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -31,14 +31,20 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
+#include <unistd.h>
 #include <sys/time.h>
 #include "log_util.h"
 #include "loc_log.h"
 #include "msg_q.h"
 #include <loc_pla.h>
-
+#include "LogBuffer.h"
+#include <unordered_map>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include <cctype>
 #define  BUFFER_SIZE  120
+#define  LOG_TAG_LEVEL_CONF_FILE_PATH "/data/vendor/location/gps.prop"
 
 // Logging Improvements
 const char *loc_logger_boolStr[]={"False","True"};
@@ -51,44 +57,49 @@ const char EXIT_TAG[]   = "Exiting";
 const char ENTRY_TAG[]  = "Entering";
 const char EXIT_ERROR_TAG[]  = "Exiting with error";
 
-#define BUILD_TYPE_PROP_NA 0
-#define BUILD_TYPE_PROP_USER 1
-#define BUILD_TYPE_PROP_USERDEBUG 2
-#define BUILD_TYPE_PROP_INVALID 3
 int build_type_prop = BUILD_TYPE_PROP_NA;
 
+const string gEmptyStr = "";
+const string gUnknownStr = "UNKNOWN";
 /* Logging Mechanism */
 loc_logger_s_type loc_logger;
 
-/* Get names from value */
-const char* loc_get_name_from_mask(const loc_name_val_s_type table[], size_t table_size, long mask)
-{
-   size_t i;
-   for (i = 0; i < table_size; i++)
-   {
-      if (table[i].val & (long) mask)
-      {
-         return table[i].name;
-      }
-   }
-   return UNKNOWN_STR;
+/* tag base logging control map*/
+static std::unordered_map<std::string, uint8_t> tag_level_map;
+static bool tag_map_inited = false;
+
+/* returns the least signification bit that is set in the mask
+   Param
+      mask -        bit mask.
+      clearTheBit - if true, mask gets modified upon return.
+   returns 0 if mask is 0.
+*/
+uint64_t loc_get_least_bit(uint64_t& mask, bool clearTheBit) {
+    uint64_t bit = 0;
+
+    if (mask > 0) {
+        uint64_t less1 = mask - 1;
+        bit = mask & ~(less1);
+        if (clearTheBit) {
+            mask &= less1;
+        }
+    }
+
+    return bit;
 }
 
-/* Get names from value */
-const char* loc_get_name_from_val(const loc_name_val_s_type table[], size_t table_size, long value)
-{
-   size_t i;
-   for (i = 0; i < table_size; i++)
-   {
-      if (table[i].val == (long) value)
-      {
-         return table[i].name;
-      }
-   }
-   return UNKNOWN_STR;
+string loc_get_bit_defs(uint64_t mask, const NameValTbl& tbl) {
+    string out;
+    while (mask > 0) {
+        out += loc_get_name_from_tbl(tbl, loc_get_least_bit(mask));
+        if (mask > 0) {
+            out += " | ";
+        }
+    }
+    return out;
 }
 
-static const loc_name_val_s_type loc_msg_q_status[] =
+DECLARE_TBL(loc_msg_q_status) =
 {
     NAME_VAL( eMSG_Q_SUCCESS ),
     NAME_VAL( eMSG_Q_FAILURE_GENERAL ),
@@ -97,21 +108,15 @@ static const loc_name_val_s_type loc_msg_q_status[] =
     NAME_VAL( eMSG_Q_UNAVAILABLE_RESOURCE ),
     NAME_VAL( eMSG_Q_INSUFFICIENT_BUFFER )
 };
-static const size_t loc_msg_q_status_num = LOC_TABLE_SIZE(loc_msg_q_status);
 
 /* Find msg_q status name */
 const char* loc_get_msg_q_status(int status)
 {
-   return loc_get_name_from_val(loc_msg_q_status, loc_msg_q_status_num, (long) status);
-}
-
-const char* log_succ_fail_string(int is_succ)
-{
-   return is_succ? "successful" : "failed";
+   return loc_get_name_from_val(loc_msg_q_status_tbl, (int64_t) status);
 }
 
 //Target names
-static const loc_name_val_s_type target_name[] =
+DECLARE_TBL(target_name) =
 {
     NAME_VAL(GNSS_NONE),
     NAME_VAL(GNSS_MSM),
@@ -120,8 +125,6 @@ static const loc_name_val_s_type target_name[] =
     NAME_VAL(GNSS_AUTO),
     NAME_VAL(GNSS_UNKNOWN)
 };
-
-static const size_t target_name_num = LOC_TABLE_SIZE(target_name);
 
 /*===========================================================================
 
@@ -138,21 +141,13 @@ RETURN VALUE
 ===========================================================================*/
 const char *loc_get_target_name(unsigned int target)
 {
-    int index = 0;
+    int64_t index = 0;
     static char ret[BUFFER_SIZE];
 
-    index =  getTargetGnssType(target);
-    if( index < 0 || (unsigned)index >= target_name_num )
-        index = target_name_num - 1;
+    snprintf(ret, sizeof(ret), " %s with%s SSC",
+             loc_get_name_from_val(target_name_tbl, getTargetGnssType(target)),
+             ((target & HAS_SSC) == HAS_SSC) ? gEmptyStr.c_str() : "out");
 
-    if( (target & HAS_SSC) == HAS_SSC ) {
-        snprintf(ret, sizeof(ret), " %s with SSC",
-           loc_get_name_from_val(target_name, target_name_num, (long)index) );
-    }
-    else {
-       snprintf(ret, sizeof(ret), " %s  without SSC",
-           loc_get_name_from_val(target_name, target_name_num, (long)index) );
-    }
     return ret;
 }
 
@@ -186,49 +181,6 @@ char *loc_get_time(char *time_string, size_t buf_size)
    return time_string;
 }
 
-
-/*===========================================================================
-FUNCTION loc_logger_init
-
-DESCRIPTION
-   Initializes the state of DEBUG_LEVEL and TIMESTAMP
-
-DEPENDENCIES
-   N/A
-
-RETURN VALUE
-   None
-
-SIDE EFFECTS
-   N/A
-===========================================================================*/
-void loc_logger_init(unsigned long debug, unsigned long timestamp)
-{
-   loc_logger.DEBUG_LEVEL = debug;
-
-    if (BUILD_TYPE_PROP_NA == build_type_prop) {
-        char value[PROPERTY_VALUE_MAX] = "NA";
-        property_get("ro.build.type", value, "userdebug");
-        if (0 == strcmp(value, "user")) {
-            build_type_prop = BUILD_TYPE_PROP_USER;
-        } else if (0 == strcmp(value, "userdebug")) {
-            build_type_prop = BUILD_TYPE_PROP_USERDEBUG;
-        } else {
-            build_type_prop = BUILD_TYPE_PROP_INVALID;
-        }
-    }
-
-    if (BUILD_TYPE_PROP_USER == build_type_prop) {
-        // force user builds to 2 or less
-        if (loc_logger.DEBUG_LEVEL > 2) {
-            loc_logger.DEBUG_LEVEL = 2;
-        }
-     }
-
-    loc_logger.TIMESTAMP = timestamp;
-}
-
-
 /*===========================================================================
 FUNCTION get_timestamp
 
@@ -257,3 +209,74 @@ char * get_timestamp(char *str, unsigned long buf_size)
   return str;
 }
 
+/*===========================================================================
+
+FUNCTION log_buffer_insert
+
+DESCRIPTION
+   Insert a log sentence with specific level to the log buffer.
+
+RETURN VALUE
+   N/A
+
+===========================================================================*/
+void log_buffer_insert(char *str, unsigned long buf_size __unused, int level)
+{
+    timespec tv;
+    clock_gettime(CLOCK_BOOTTIME, &tv);
+    uint64_t elapsedTime = (uint64_t)tv.tv_sec + (uint64_t)tv.tv_nsec/1000000000;
+    string ss = str;
+    loc_util::LogBuffer::getInstance()->append(ss, level, elapsedTime);
+}
+
+void log_tag_level_map_init()
+{
+    if (tag_map_inited) {
+        return;
+    }
+
+    std::string filename = LOG_TAG_LEVEL_CONF_FILE_PATH;
+
+    std::ifstream s(filename);
+    if (!s.is_open()) {
+        ALOGE("cannot open file:%s", LOG_TAG_LEVEL_CONF_FILE_PATH);
+    } else {
+        std::string line;
+        while (std::getline(s, line)) {
+            line.erase(std::remove(line.begin(), line.end(), ' '), line.end());
+            int pos = line.find('=');
+            if (pos <= 0 || pos >= (line.size() - 1)) {
+                ALOGE("wrong format in gps.prop");
+                continue;
+            }
+            std::string tag = line.substr(0, pos);
+            std::string level = line.substr(pos+1, 1);
+            if (!std::isdigit(*(level.begin()))) {
+                ALOGE("wrong format in gps.prop");
+                continue;
+            }
+            tag_level_map[tag] = (uint8_t)std::stoul(level);
+        }
+    }
+    tag_map_inited = true;
+}
+
+int get_tag_log_level(const char* tag)
+{
+    if (!tag_map_inited) {
+        return -1;
+    }
+
+    // in case LOG_TAG isn't defined in a source file, use the global log level
+    if (tag == NULL) {
+        return loc_logger.DEBUG_LEVEL;
+    }
+    int log_level;
+    auto search = tag_level_map.find(std::string(tag));
+    if (tag_level_map.end() != search) {
+        log_level = search->second;
+    } else {
+        log_level = loc_logger.DEBUG_LEVEL;
+    }
+    return log_level;
+}
