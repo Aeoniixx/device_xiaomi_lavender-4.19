@@ -1264,10 +1264,10 @@ vendor/lib64/vendor.qti.gnss@3.0.so|ff1733d10abd97fa4381c798ae74b4cc5dac39e8
 
 # Graphics - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
 vendor/lib/egl/eglSubDriverAndroid.so|501f7cf3ec55d4ded5f5921e4fe0a0822d077d46
-vendor/lib/egl/libEGL_adreno.so|42f0f4ab0ca69d7ba880bb9afcb0fb6f4290df98
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so|42f0f4ab0ca69d7ba880bb9afcb0fb6f4290df98
 vendor/lib/egl/libGLESv1_CM_adreno.so|1e6924d8c36508360d38e764618b25b0443c4d8e
-vendor/lib/egl/libGLESv2_adreno.so|1c6a646580bff7f4baf4aaf6d4eb0c2f7a55b75f
-vendor/lib/egl/libq3dtools_adreno.so|f59f0611355ff8b5ce3cfb97abdf49f5183052ac
+vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so|1c6a646580bff7f4baf4aaf6d4eb0c2f7a55b75f
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so|f59f0611355ff8b5ce3cfb97abdf49f5183052ac
 vendor/lib/egl/libq3dtools_esx.so|fcbda2e21ccfebbd1c97c1ce6314fef3bbd412b5
 vendor/lib/libadreno_utils.so|57dc2426c25c16a4f250f23a7dae9d7239c349d1
 vendor/lib/libC2D2.so|052f9701170bbfd82b6f028ad2524baff5aa1eab
@@ -1281,10 +1281,10 @@ vendor/lib/libOpenCL.so|b2cf8b9102129029c56bbeaf6a3e4728c2ca6a57
 vendor/lib/librs_adreno.so|53c5e960452f14958e6893241995d1a42e576823
 vendor/lib/libVkLayer_q3dtools.so|fc2e7f99efb17245202d500be0df0bc5eb19b23e
 vendor/lib64/egl/eglSubDriverAndroid.so|52cc62010df3eabdd440fc756e2c4abee35dabeb
-vendor/lib64/egl/libEGL_adreno.so|ccb68f54eda4135c29b2cf059cc5d9cc2ed6b029
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|ccb68f54eda4135c29b2cf059cc5d9cc2ed6b029
 vendor/lib64/egl/libGLESv1_CM_adreno.so|eac8a37f8a2cc19cfd0285ec54b0ea1bacfd7430
-vendor/lib64/egl/libGLESv2_adreno.so|e3266eddb7e966ae0edadacfa589f4271000feb1
-vendor/lib64/egl/libq3dtools_adreno.so|7c40ea686640d4a481aacd2426347ef6abb593e7
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|e3266eddb7e966ae0edadacfa589f4271000feb1
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|7c40ea686640d4a481aacd2426347ef6abb593e7
 vendor/lib64/egl/libq3dtools_esx.so|6e2e9bc150592ef22b96f26d31244f8a2a4495e3
 vendor/lib64/libadreno_utils.so|fd2e8e7ef74a136cab7e309827f5aaab402c9b37
 vendor/lib64/libC2D2.so|71f0be54afc7f8f9c8feeb9debc849706f8fb698
