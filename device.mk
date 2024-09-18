@@ -96,10 +96,6 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
-# Dynamic partitions
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/partitions/flash_super_dummy.sh:install/bin/flash_super_dummy.sh
-
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
