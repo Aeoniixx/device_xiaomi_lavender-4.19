@@ -445,6 +445,10 @@ PRODUCT_SHIPPING_API_LEVEL := 28
 #PRODUCT_PACKAGES += \
 #    libcamera_sdm660_shim
 
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal-service.qti
+
 # UFFD GC
 OVERRIDE_ENABLE_UFFD_GC := false
 
