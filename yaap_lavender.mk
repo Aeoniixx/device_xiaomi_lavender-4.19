@@ -12,6 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/yaap/config/common_full_phone.mk)
 TARGET_PROVIDES_POWERHAL := true
 TARGET_BUILD_GAPPS := true
+DISABLE_EROFS := false
 
 # Inherit from lavender device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
