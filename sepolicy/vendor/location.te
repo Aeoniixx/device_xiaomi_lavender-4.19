@@ -1,1 +1,0 @@
-allow location fwk_sensor_service:service_manager find;

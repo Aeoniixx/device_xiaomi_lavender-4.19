@@ -1,1 +1,5 @@
-allow zygote unlabeled:file { write };
+get_prop(zygote, exported_camera_prop)
+
+allow zygote adsprpcd_file:dir search;
+allow zygote vendor_framework_file:dir search;
+allow zygote unlabeled:dir { search };

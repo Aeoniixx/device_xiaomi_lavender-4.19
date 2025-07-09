@@ -1,3 +1,34 @@
-allow init apex_metadata_file:dir { getattr search };
-set_prop(init, bluetooth_prop)
-set_prop(init, vendor_qcom_ims_prop)
+get_prop(init, exported_default_prop)
+allow init logdump_partition:lnk_file relabelto;
+
+allow init adsprpcd_file:file mounton;
+allow init apex_metadata_file:lnk_file read;
+allow init socket_device:sock_file { unlink setattr create };
+allow init sysfs_graphics:file { read open };
+allow init sysfs_graphics:lnk_file read;
+allow init sysfs_battery_supply:file setattr;
+allow init vendor_default_prop:property_service set;
+allow init sysfs_info:file { open read };
+
+allow init firmware_file:filesystem { getattr };
+allow init bt_firmware_file:filesystem { getattr };
+allow init apex_metadata_file:lnk_file { read };
+
+# Vibrator
+allow init sysfs_leds:file { rw_file_perms };
+
+allow init sysfs:file { setattr };
+allow init debugfs_tracing_debug:dir { mounton };
+allow init sysfs_emmc_host:file rw_file_perms;
+
+allow init system_file:file mounton;
+allow init {
+ vendor_configs_file
+ vendor_framework_file
+ vendor_app_file
+ vendor_overlay_file
+}:file mounton;
+
+allow init hal_fingerprint_default:process ptrace;
+allow init per_boot_file:file ioctl;
+allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };

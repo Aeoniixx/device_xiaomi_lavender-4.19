@@ -1,0 +1,10 @@
+binder_call(gmscore_app, hal_memtrack_default);
+
+dontaudit gmscore_app { bt_firmware_file firmware_file }:filesystem getattr;
+
+allow gmscore_app adsprpcd_file:dir{ search };
+allow gmscore_app exported_camera_prop:file { read open getattr };
+allow gmscore_app traced_producer_socket:sock_file { write };
+allow gmscore_app traced:unix_stream_socket { connectto };
+allow gmscore_app zygote:unix_stream_socket getopt;
+

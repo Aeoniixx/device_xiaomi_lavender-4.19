@@ -1,11 +1,15 @@
+allow system_app blkio_dev:dir search;
+allow system_app hall_dev:dir r_dir_perms;
+allow system_app hall_dev:file rw_file_perms;
+allow system_app hall_dev:lnk_file r_file_perms;
 allow system_app kcal_dev:dir search;
 allow system_app kcal_dev:file rw_file_perms;
+allow system_app proc_pagetypeinfo:file r_file_perms;
 allow system_app proc_vmallocinfo:file read;
-allow system_app proc_pagetypeinfo:file read;
 allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_graphics:dir search;
-allow system_app sysfs_graphics:file { open write };
+allow system_app sysfs_graphics:file rw_file_perms;
 allow system_app sysfs_leds:dir search;
 allow system_app sysfs_fpsinfo:file rw_file_perms;
 allow system_app sysfs_headphonegain:file rw_file_perms;
@@ -13,5 +17,13 @@ allow system_app sysfs_micgain:file rw_file_perms;
 allow system_app sysfs_earpiecegain:file rw_file_perms;
 allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
-allow system_app system_app:dir write;
+allow system_app zygote:unix_stream_socket { getopt };
 allow system_app user_profile_data_file:dir read;
+
+# neverallow and harmless
+dontaudit system_app time_daemon:unix_stream_socket { connectto };
+
+get_prop(system_app, system_prop);
+set_prop(system_app, system_prop);
+get_prop(system_app, qemu_hw_prop);
+hal_client_domain(system_app, hal_mlipay);
