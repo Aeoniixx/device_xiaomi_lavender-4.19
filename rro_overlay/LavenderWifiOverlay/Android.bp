@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "LavenderWifiOverlay",
+    theme: "LavenderWifiOverlay",
+    product_specific: true
+}
