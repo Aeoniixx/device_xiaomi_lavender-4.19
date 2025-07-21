@@ -144,6 +144,18 @@ vendor/lib64/libbt-hidlclient.so|4f238bb08d5dbab9c018d03e47d4f2d43e667532
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|475311f05f103b23654253e1dc86bdc5fcc8809a
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|f191bd8bb067e57a06af89ce2f9a9ea703bb2516
 
+# CDSP - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
+vendor/bin/cdsprpcd|258702b84c4496e7021c1d24d20794f6d2fedc11
+vendor/etc/init/vendor.qti.cdsprpc-service.rc|36772b70216796e8ef19376d9c6a81ee9ffff549
+vendor/lib/libcdsp_default_listener.so|a6d2f3139eb94edb58eb8c97af85f8236bdedbfb
+vendor/lib/libcdsprpc.so|72c4150d4358b335d2b88ccb5ca34e23d08ee238
+vendor/lib/libfastrpc_utf_stub.so|ad1b79fc1ce0534d4d9c491ba67532d76ef4d508
+vendor/lib/libsysmon_cdsp_skel.so|636f834df2e62cbd6fd6c2bf3040a3272ca72714
+vendor/lib64/libcdsp_default_listener.so|fdd9893e7e95a98ec953ac32d3a2a5918b28ef82
+vendor/lib64/libcdsprpc.so|4688f68c303a4def9c01549621f223283fc8ca12
+vendor/lib64/libfastrpc_utf_stub.so|5455994d24e197a444ced928f45a8fdb5a8f711e
+vendor/lib64/libsysmon_cdsp_skel.so|d84cc18b220ece72091fc366903a2d24bfdd2bba
+
 # Camera - from clover
 vendor/lib/libts_face_beautify_hal.so|5b2ffbbd2b03eb4b1b98d89c04bdd3873db4bb7f
 vendor/lib/libts_detected_face_hal.so|356a49713693fa83d058e968c00d129d85c8acfb
