@@ -1197,12 +1197,10 @@ vendor/etc/qdcm_calib_data_boe_td4320_fhdplus_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_shenchao_nt36672a_fhdplus_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_nt36672a_fhdplus_video_mode_dsi_panel.xml
 
-# FM - from S62Pro
-system_ext/lib64/fm_helium.so|b2440e4feaae8a7f5e2269525520f9774b6962fc
-system_ext/lib64/libfm-hci.so|758c6e7cfafc964b5cd9d71806ec5455e0d78716
-system_ext/lib64/vendor.qti.hardware.fm@1.0.so|5eaf6d5d67361ff6236c1ec4f5225c6185a904a6
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|05931b5d088bd7000b0b002ee650b0953e272cd7
-vendor/lib64/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor|f6e23f902b7e15232b20af55161a24da93ffe25f
+# FM - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
+vendor/lib/vendor.qti.hardware.fm@1.0.so|f47f4cc205ac303e745c0acb6c6a1b1cd467e99d
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|d4025a178a559d3a72f29d57d2404561cdccf48a
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|12c1ca37da7c6628f7b09cb3865818f72b8fef68
 
 # Fingerprint firmware
 vendor/firmware/fpctzappfingerprint.b00
