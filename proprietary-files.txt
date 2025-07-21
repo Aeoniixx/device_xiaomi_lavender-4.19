@@ -118,12 +118,31 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|b179e3b745a2666eeac3e
 vendor/lib64/libbtnv.so|d412e0511c79599cdb010a18f97111e0283759e8
 vendor/lib64/libsoc_helper.so|4f00ed77a590817651ea3eb9c93d987ef15bf9e7
 
-# Bluetooth (A2DP) - from S62Pro
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|156ec51ccb53f667605cf99422abf9357888b4b6
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|3097cb00777c2911cff40e323ce3c921923722d8
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|cfc982fd153084781f540bcc4a31b6b05a9ced19
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|23706dcfa35cc6f7dee934e13886c19a56a9aa12
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|ece3dafc4447e8302109851c3a6b0d3978b3506d
+# Bluetooth (A2DP) - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
+vendor/lib/hw/audio.bluetooth_qti.default.so|b0e7b61f6e134288dfbed2452fc66a4c4f65947e
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|5843d263fea458697d835432cbabc658dd814504
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|e8439789fc7aa31abd1c83f70be2ed62ce56b002
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|bb5804705ae45b89ffbdfa35669098fd373faf4e
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|b49f9357c0caaa816b134310e0f83a70b109a392
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|1382705def805808233d21a1964f3d4b9af9c62a
+vendor/lib/btaudio_offload_if.so|a069cee50d368153b597f4f53483559764d77f37
+vendor/lib/libbluetooth_audio_session_qti.so|2e5e552bef57aea5fd0d4a514413d4a229b95b09
+vendor/lib/libbluetooth_audio_session_qti_2_1.so|88eda2215254242ffba3ed9298a010aace098db9
+vendor/lib/libbt-hidlclient.so|2d7bfa274cfef2032f1fa7d0ddc5fabf09c6c922
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so|0e4b1a038501a7480cb5eaaf0d91eab777d5c6af
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so|53b56ba1084e50be1f40a2df44e37845d3de45df
+vendor/lib64/hw/audio.bluetooth_qti.default.so|1458f85994525344d886e6043f47d6709ec06791
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|3e7eb5dfcd0da9c10b34e7052d73cf4cbcbbf90b
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|0637f96125a036b24b920787be85d2a8d5cbc349
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|a24970b670e52e3df882a36b957caa81a17f1e90
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|6d0a838e5aa52773b068f2800b01943a6ae5b209
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|b25aaa4a7ce7cf72e67de3725d3c8b09aaa5e09e
+vendor/lib64/btaudio_offload_if.so|ee409b24dbdbe165375ca54dbae41c24a2b53682
+vendor/lib64/libbluetooth_audio_session_qti.so|fc8e91294bc64a4cc3980ec94a25c62b0a85a4a1
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so|44777b2f5345044ccf1fd5beac5825e9b6935ea2
+vendor/lib64/libbt-hidlclient.so|4f238bb08d5dbab9c018d03e47d4f2d43e667532
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|475311f05f103b23654253e1dc86bdc5fcc8809a
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|f191bd8bb067e57a06af89ce2f9a9ea703bb2516
 
 # Camera - from clover
 vendor/lib/libts_face_beautify_hal.so|5b2ffbbd2b03eb4b1b98d89c04bdd3873db4bb7f
