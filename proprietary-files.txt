@@ -61,6 +61,27 @@ vendor/firmware/dbmd4_va_fw.bin
 vendor/firmware/tfa98xx.cnt
 vendor/firmware/voice_amodel.bin
 
+# Audio - from LA.QSSI.15.0.r1-15400-qssi.0
+system_ext/bin/qxrsplitauxservice|238f353993ddbd57bbca5cdd239e0451b6e516e5
+system_ext/etc/init/sxrauxd_ext.rc|fbaa12e37788fa17524fec02b842902d4e3a6f53
+system_ext/etc/seccomp_policy/sxraux-arm.policy|0508c0d7bf078a26f4c37c4eac58b44b4b21de3f
+system_ext/lib/libbinauralrenderer_wrapper.qti.so|03495a4640b506e0511e4d9df007fc6901ac4c99
+system_ext/lib/libhoaeffects.qti.so|ffcd5bb7d93a7bbdc9da3495804280e373f7c91d
+system_ext/lib/libhoaeffects_csim.so|b2922de1a356849b58ff0c3e73c8c076dcffe5dd
+system_ext/lib/liblsmclient.so|5e4013201d5358fdcd15dee13bd9185fc2ebe520
+system_ext/lib/libvr_amb_engine.so|69340f3af668f39a3f2b4f9314ca49ef8de7de2b
+system_ext/lib/libvr_object_engine.so|0563806dcb9f74461f030e23256eb2de9b6fe155
+system_ext/lib/vendor.qti.hardware.ListenSoundModel@1.0.so|cf14ac5d587d6c7c8a9c59c691bba9bf24974b4f
+system_ext/lib64/libbinauralrenderer_wrapper.qti.so|2172fcf906b4c3155450d3c3a37d6586c16f0901
+system_ext/lib64/libhoaeffects.qti.so|fda85e1b425059f6be8f7a8541b702230a9e5c65
+system_ext/lib64/libhoaeffects_csim.so|3eca122613a3af345493a242b6839466dd472ac0
+system_ext/lib64/liblsmclient.so|6cd379c9112609a3bc4eef98a1ceff8ce40be22e
+system_ext/lib64/libqxrsplitauxservice.qti.so|3bc953b1ecc0445b4674261cef6d41069ece90e3
+system_ext/lib64/libvr_amb_engine.so|acb1fd360626b9f237adef0551d5ea31af58f347
+system_ext/lib64/libvr_object_engine.so|8e53cccb6e2c56032d5388f4151d29123d63f51c
+system_ext/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so|27b3c4622216f2cd37604ffa79c9c90a7d7cb788
+system_ext/lib64/vendor.qti.hardware.qxr-V1-ndk.so|2ba20e8821894c2ed887e14301dc0402dcc57a3c
+
 # Audio - from S62Pro RKQ1.210406.002
 vendor/lib/soundfx/libasphere.so|90940fca6f4b84794046513c6c6868eca9470066
 vendor/lib/soundfx/libqcbassboost.so|8e92c5d40cd23f503840b055d71336e4c9daecc0

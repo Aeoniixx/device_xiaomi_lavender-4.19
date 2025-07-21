@@ -24,6 +24,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     liba2dpoffload \
     libaudio-resampler \
+    libaudioclient_shim \
     libhdmiedid \
     libhfp \
     libqcompostprocbundle \
