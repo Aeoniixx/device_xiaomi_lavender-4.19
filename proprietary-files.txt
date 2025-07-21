@@ -82,19 +82,31 @@ system_ext/lib64/libvr_object_engine.so|8e53cccb6e2c56032d5388f4151d29123d63f51c
 system_ext/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so|27b3c4622216f2cd37604ffa79c9c90a7d7cb788
 system_ext/lib64/vendor.qti.hardware.qxr-V1-ndk.so|2ba20e8821894c2ed887e14301dc0402dcc57a3c
 
-# Audio - from S62Pro RKQ1.210406.002
-vendor/lib/soundfx/libasphere.so|90940fca6f4b84794046513c6c6868eca9470066
-vendor/lib/soundfx/libqcbassboost.so|8e92c5d40cd23f503840b055d71336e4c9daecc0
-vendor/lib/soundfx/libqcreverb.so|7e05f1f4bdd2947dac3aefd871437d289581078b
-vendor/lib/soundfx/libqcvirt.so|03a8b95eb77811e3861307ab1451f4144bba2572
-vendor/lib/libVkLayer_q3dtools.so|527589b3780440dc26aceebc97866dadbeeebd86
-vendor/lib/libacdb-fts.so|96db6fe2e443326705a37ac6e2e394f03144a386
-vendor/lib/libacdbloader.so|4d0743fe7f3eb1d2318feafc06363ffb527ca942
-vendor/lib/libacdbrtac.so|b6484ac64f20c4a0f605fb4901d33b8b27a95a74
-vendor/lib/libadiertac.so|b0a0ebc89be729e37fe34ceaa05f97a1bc9560a6
-vendor/lib/libadm.so|2fd429c8066572cc49262fe0d452c78706197d54
-vendor/lib/libaudcal.so|5361c538d20634221c317851c33b0842ced93fca
-vendor/lib/libqtigef.so|977cbb704f6b2bae7f4e2f17b8c15146a6cacffb
+# Audio - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
+vendor/bin/audioflacapp|ac0fd76083430736851da040b5547677ac7f4067
+vendor/lib/libacdb-fts.so|10a9d929616df9ec0e545563a2ca08c9bd814d5f
+vendor/lib/libacdbloader.so|080d3f49a528ad242fe46f07ea75f413489b4f83
+vendor/lib/libacdbrtac.so|522ba52f74e3a06e128f842fca6e8781613263e9
+vendor/lib/libadiertac.so|41a56e166dab59a4d4bbd7bf1e4e25711c352b02
+vendor/lib/libadm.so|05a0611a064dafc0a9e47337cca5a780cea6de8a
+vendor/lib/libaudcal.so|8e5e3bf2f39b4abaedd643c261972b7f68a545dc
+vendor/lib/libaudioalsa.so|edcf75fa53bd959defd18a6a16e0ec40fd42b014
+vendor/lib/libaudioconfigstore.so|02012b87f4d5907e0b640fa1c5b2e4312e725eee
+vendor/lib/libaudioparsers.so|9f22defa83a7aea16d45e609579361e523f8b773
+vendor/lib/libdrc.so|1bfd492c38cfdea25beba3ed992d883b972fb9fb
+vendor/lib/libFlacSwDec.so|f47c030027988c49db1aa729df2982d844539277
+vendor/lib/libqtigef.so|c803dd2eea97a720f5ae20c5d37bc0f37a96c7a5
+vendor/lib/libsurround_3mic_proc.so|e1464999b2a48e1489dba10969106ad08fac6479
+vendor/lib64/libacdb-fts.so|b41c2a37bc046e9c7e6764a2271882ed1415c491
+vendor/lib64/libacdbloader.so|018b00d129249592838eb04423027f329c801686
+vendor/lib64/libacdbrtac.so|18d78503128af30813446852cefda17c44262c56
+vendor/lib64/libadiertac.so|1fb475ed2bdd4f828ab7e64c9dc05327ff262939
+vendor/lib64/libaudcal.so|5a2fec1304afe9eacb87fbca87a8121fda45ffb7
+vendor/lib64/libaudioalsa.so|5385e8c57f69fe27e7b640aee08b5b2b00d70b86
+vendor/lib64/libaudioconfigstore.so|7a3a9fbe350039a4b803395bc39ca635cf651a01
+vendor/lib64/libaudioparsers.so|506b43e9d5c18e5eeaa18cc734324f0138d7e9cc
+vendor/lib64/libFlacSwDec.so|3b2798cf7ab8a5e5d515a5a2489a7e77ba2ee62a
+vendor/lib64/libqtigef.so|de0024eed15f7ba45968e435971730230a643dc3
 
 # Bluetooth - from S62Pro
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|07d96d0d3c4a500b14ea3c97e02b9eb5ee2bbc4d
@@ -1130,7 +1142,6 @@ vendor/lib64/libGPreqcancel_svc.so|5369bb41c214c0bd3782438c0488cd2dba8cb667
 vendor/lib64/libQSEEComAPI.so|7ad0a71938c1de5dbb54a52fb68285ac08f0a130
 vendor/lib64/libSecureUILib.so|b98555b76083a897fc9bbfc27778750d2d47817a
 vendor/lib64/libStDrvInt.so|6091f1f496b87730f9a77e9ede504c4fa99c608a
-vendor/lib64/libVkLayer_q3dtools.so|9590e902f9a2205eee55dd041cf165e3b3f4847e
 vendor/lib64/libdrmfs.so|d01f7964b64bfabd56afea030a2e874f5b3af266
 vendor/lib64/libdrmtime.so|9aca2a5224378365232933b06a742a2498dd7468
 vendor/lib64/libqisl.so|c79719eebc094c2af9561e8df2c158638b111b70
@@ -1235,6 +1246,7 @@ vendor/lib/libgsl.so|c07882201eaa3e8fba9f6fc27812fe835e58adf2
 vendor/lib/libllvm-glnext.so|1c086795cb502273b5535b391b0e95f90bcbd198
 vendor/lib/libllvm-qcom.so|e79a7e1ab12b238345c1c2ce3c72a889520ffe25
 vendor/lib/librs_adreno.so|21cb023ba33062fbb1ad9b1738239c79a5a8ec43
+vendor/lib/libVkLayer_q3dtools.so|527589b3780440dc26aceebc97866dadbeeebd86
 vendor/lib64/egl/eglSubDriverAndroid.so|d6dc70f08a0e68e897c2c8a956a8c2f3e036c540
 vendor/lib64/egl/libEGL_adreno.so|d602670a45e49916be5e0c2c60a8f0fe3f526791
 vendor/lib64/egl/libGLESv1_CM_adreno.so|b45486353fceb47ec419ef580fdf6d2305a842ff
@@ -1251,6 +1263,7 @@ vendor/lib64/libgsl.so|16b2023fcd994f8b3c0a7b390be51960e2d7ce08
 vendor/lib64/libllvm-glnext.so|115c5a7d2463eacff39b0d0a04678bbb91c36d23
 vendor/lib64/libllvm-qcom.so|c4a55bdd7291c722dc5bf84064e2914e5256af7a
 vendor/lib64/librs_adreno.so|bf87696c917d75da5557c194098faaae5e303a0b
+vendor/lib64/libVkLayer_q3dtools.so|9590e902f9a2205eee55dd041cf165e3b3f4847e
 
 # Graphics (Dependency) - from LA.UM.10.2.1.r1-03400-sdm660.0
 vendor/lib/libtinyxml.so|16853d57ef82d59b48506857fc80b149ba3b3543
