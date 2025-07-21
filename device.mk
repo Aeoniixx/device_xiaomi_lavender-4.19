@@ -11,26 +11,21 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
-    android.hardware.soundtrigger@2.3-impl:32
-
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
+    android.hardware.soundtrigger@2.3-impl \
     audio.primary.sdm660 \
     audio.r_submix.default \
-    libaudioroute.vendor \
-    audio.usb.default
-
-PRODUCT_PACKAGES += \
+    audio.usb.default \
+    audio.usbv2.default \
     liba2dpoffload \
     libaudio-resampler \
     libaudioclient_shim \
+    libaudioroute.vendor \
     libhdmiedid \
     libhfp \
+    libsndmonitor \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libsndmonitor \
     libvolumelistener \
     sound_trigger.primary.sdm660
 
