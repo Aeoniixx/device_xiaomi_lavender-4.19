@@ -308,17 +308,14 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage \
     $(LOCAL_PATH)/overlay-yaap
 
 PRODUCT_PACKAGES += \
-    LavenderApertureOverlay \
-    LavenderCarrierConfigOverlay \
-    LavenderDeviceAsWebcam \
-    LavenderFrameworksOverlay \
-    LavenderSettingsOverlay \
-    LavenderTelephonyOverlay \
-    LavenderWifiOverlay 
+    SettingsOverlay \
+    NoCutoutOverlay \
+    DeviceAsWebcamLavender
 
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
