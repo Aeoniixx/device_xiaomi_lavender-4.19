@@ -1243,7 +1243,7 @@ vendor/lib64/libqdma_file_agent.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 
-# GPS - from LA.UM.9.15.2.r1-09100-KAMORTA.QSSI14.0
+# GPS - from LA.UM.9.15.2.r1-10100-KAMORTA.QSSI14.0
 vendor/bin/garden_app
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
