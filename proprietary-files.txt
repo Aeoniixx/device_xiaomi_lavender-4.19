@@ -1285,6 +1285,15 @@ vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 
+# GPS - from Zebra/helios/helios:13/13-34-31.00-TG-U00-STD-HEL-04/181:user/release-keys
+#vendor/lib/libminksocket.so
+vendor/lib64/libasn1cper.so
+vendor/lib64/libasn1crt.so
+vendor/lib64/libasn1crtx.so
+vendor/lib64/libcacertclient.so
+vendor/lib64/libjnihelper.so
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+
 # Graphics - from Zebra/helios/helios:14/14-23-05.00-UG-U05-STD-HEL-04/5:user/release-keys
 vendor/lib/egl/eglSubDriverAndroid.so|501f7cf3ec55d4ded5f5921e4fe0a0822d077d46
 vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so|42f0f4ab0ca69d7ba880bb9afcb0fb6f4290df98
