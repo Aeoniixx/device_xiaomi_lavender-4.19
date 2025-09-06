@@ -4,6 +4,9 @@ persist.vendor.cne.feature=1
 # Disable vsync for cpu rendered apps
 debug.cpurend.vsync=false
 
+# GPS
+persist.backup.ntpServer="0.pool.ntp.org"
+
 # Iorapd
 ro.iorapd.enable=false
 iorapd.perfetto.enable=false

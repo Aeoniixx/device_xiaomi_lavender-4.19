@@ -28,6 +28,7 @@ cc_library_shared {
         "loc_misc_utils.cpp",
         "loc_nmea.cpp",
         "LocIpc.cpp",
+        "LogBuffer.cpp",
     ],
 
     cflags: [
