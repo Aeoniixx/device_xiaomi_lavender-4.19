@@ -299,7 +299,6 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libstagefright_omx.vendor \
     libc2dcolorconvert \
-    libhypv_intercept \
     libmm-omxcore \
     libOmxCore \
     libOmxVdec \
